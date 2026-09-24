@@ -2,6 +2,7 @@ import streamlit as st
 from datetime import datetime
 
 from ai_engine import extract_basic_facts, find_missing_information
+from timeline import build_timeline
 
 
 # -----------------------------
@@ -48,11 +49,11 @@ incident_text = st.text_area(
     placeholder=(
         "Example: Around 7:30 PM, I was near the college gate. "
         "I saw a motorcycle hit a parked car. "
-        "There were two people on the motorcycle."
+        "There were two people on the motorcycle. "
+        "The driver stopped after the collision."
     ),
     height=200
 )
-
 
 incident_date = st.date_input(
     "Date of incident",
@@ -61,7 +62,7 @@ incident_date = st.date_input(
 
 
 # -----------------------------
-# Analyze Button
+# Analyze Incident
 # -----------------------------
 
 if st.button("🔍 Analyze Incident", type="primary"):
@@ -74,18 +75,36 @@ if st.button("🔍 Analyze Incident", type="primary"):
 
     else:
 
-        # Extract basic facts
-        facts = extract_basic_facts(incident_text)
+        # -----------------------------
+        # Fact Extraction
+        # -----------------------------
 
-        # Find missing information
-        missing = find_missing_information(facts)
+        facts = extract_basic_facts(
+            incident_text
+        )
+
+        # -----------------------------
+        # Missing Information
+        # -----------------------------
+
+        missing = find_missing_information(
+            facts
+        )
+
+        # -----------------------------
+        # Timeline
+        # -----------------------------
+
+        timeline = build_timeline(
+            incident_text
+        )
 
         st.success(
             "Incident analyzed successfully."
         )
 
         # -----------------------------
-        # Extracted Facts
+        # Extracted Information
         # -----------------------------
 
         st.header("📋 Extracted Information")
@@ -103,17 +122,23 @@ if st.button("🔍 Analyze Incident", type="primary"):
             st.subheader("🕐 Time")
 
             if facts["time"]:
+
                 for item in facts["time"]:
                     st.write("•", item)
+
             else:
+
                 st.write("Not provided")
 
             st.subheader("📍 Location")
 
             if facts["location"]:
+
                 for item in facts["location"]:
                     st.write("•", item)
+
             else:
+
                 st.write("Not provided")
 
         with col2:
@@ -121,26 +146,65 @@ if st.button("🔍 Analyze Incident", type="primary"):
             st.subheader("👥 People")
 
             if facts["people"]:
+
                 for item in facts["people"]:
                     st.write("•", item)
+
             else:
+
                 st.write("Not provided")
 
             st.subheader("🚗 Objects / Vehicles")
 
             if facts["objects"]:
+
                 for item in facts["objects"]:
                     st.write("•", item)
+
             else:
+
                 st.write("Not provided")
 
             st.subheader("⚡ Events")
 
             if facts["events"]:
+
                 for item in facts["events"]:
                     st.write("•", item)
+
             else:
+
                 st.write("Not provided")
+
+
+        # -----------------------------
+        # Timeline
+        # -----------------------------
+
+        st.header("🕐 Incident Timeline")
+
+        if timeline:
+
+            for index, event in enumerate(
+                timeline,
+                start=1
+            ):
+
+                st.markdown(
+                    f"**{index}. {event['time']}**"
+                )
+
+                st.write(
+                    event["description"]
+                )
+
+                st.divider()
+
+        else:
+
+            st.write(
+                "No timeline events could be identified."
+            )
 
 
         # -----------------------------
@@ -157,13 +221,15 @@ if st.button("🔍 Analyze Incident", type="primary"):
             )
 
             for item in missing:
-                st.write("•", item)
+
+                st.write(
+                    "•", item
+                )
 
         else:
 
             st.success(
-                "No major missing information was detected "
-                "by the current extraction layer."
+                "No major missing information was detected."
             )
 
 
@@ -173,24 +239,31 @@ if st.button("🔍 Analyze Incident", type="primary"):
 
         st.header("✅ User Verification")
 
-        st.checkbox(
+        verified = st.checkbox(
             "I have reviewed the extracted information."
         )
 
+        if verified:
+
+            st.success(
+                "Information marked as reviewed by the user."
+            )
+
         st.caption(
-            "The extracted information should be verified "
-            "by the user before creating a final report."
+            "The user should verify all extracted information "
+            "before creating a final incident report."
         )
 
 
         # -----------------------------
-        # Current Status
+        # AI Development Status
         # -----------------------------
 
-        st.header("🚧 AI Development Status")
+        st.header("🚧 Current Development Stage")
 
         st.info(
-            "The current version uses a basic local fact-extraction "
-            "layer. A dedicated AI model will be integrated in "
-            "the next development stage."
+            "The current version contains a basic local "
+            "fact-extraction and timeline layer. "
+            "A dedicated AI model will be integrated in "
+            "the next stage."
         )
