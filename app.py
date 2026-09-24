@@ -6,7 +6,7 @@ from timeline import build_timeline
 
 
 # =========================================================
-# PAGE CONFIGURATION
+# PAGE CONFIG
 # =========================================================
 
 st.set_page_config(
@@ -18,7 +18,7 @@ st.set_page_config(
 
 
 # =========================================================
-# CUSTOM CSS
+# SOFT PASTEL DESIGN
 # =========================================================
 
 st.markdown("""
@@ -30,12 +30,17 @@ html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
 }
 
-/* Main background */
 .stApp {
-    background: linear-gradient(135deg, #f5f7ff 0%, #eef7ff 45%, #f8f5ff 100%);
+    background:
+        linear-gradient(
+            135deg,
+            #f7faf8 0%,
+            #f5f7fb 45%,
+            #faf7fb 100%
+        );
 }
 
-/* Hide Streamlit menu */
+/* Hide Streamlit branding */
 #MainMenu {
     visibility: hidden;
 }
@@ -44,124 +49,384 @@ footer {
     visibility: hidden;
 }
 
-/* Hero section */
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
 .hero {
-    padding: 35px 40px;
+    padding: 38px 45px;
     border-radius: 28px;
-    background: linear-gradient(135deg, #172554, #2563eb, #7c3aed);
-    color: white;
-    margin-bottom: 30px;
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+
+    background:
+        linear-gradient(
+            120deg,
+            #dfeee7,
+            #e7e3f5,
+            #dfeef4
+        );
+
+    border: 1px solid #d9e3df;
+
+    box-shadow:
+        0 15px 35px rgba(60, 70, 80, 0.08);
+
+    margin-bottom: 28px;
 }
 
 .hero h1 {
     font-size: 46px;
     font-weight: 800;
-    margin-bottom: 5px;
+    color: #354052;
+    margin-bottom: 6px;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #e0e7ff;
-    margin-bottom: 0;
+.hero-subtitle {
+    font-size: 19px;
+    color: #667085;
 }
 
-/* Feature cards */
+.hero-tagline {
+    font-size: 15px;
+    color: #6f7185;
+    margin-top: 14px;
+}
+
+
+/* =========================================================
+   INTRO CARD
+   ========================================================= */
+
+.intro-card {
+    background: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e7e9ee;
+
+    box-shadow:
+        0 8px 25px rgba(60, 70, 80, 0.06);
+
+    margin-bottom: 30px;
+}
+
+.intro-title {
+    color: #465266;
+    font-size: 27px;
+    font-weight: 750;
+}
+
+.intro-text {
+    color: #687386;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+    font-size: 27px;
+    font-weight: 800;
+    color: #465266;
+
+    margin-top: 32px;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
 .feature-card {
-    background: white;
+
+    background: rgba(255,255,255,0.92);
+
     padding: 22px;
+
     border-radius: 20px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.07);
-    min-height: 145px;
+
+    border: 1px solid #e5e8ec;
+
+    box-shadow:
+        0 7px 22px rgba(70,80,90,0.06);
+
+    min-height: 150px;
+
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
 }
 
 .feature-icon {
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .feature-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 750;
+
+    color: #4d5868;
+
     margin-top: 8px;
-    color: #172554;
 }
 
 .feature-text {
-    font-size: 14px;
-    color: #64748b;
+    font-size: 13px;
+
+    color: #7a8391;
+
+    margin-top: 7px;
+
+    line-height: 1.5;
 }
 
-/* Section title */
-.section-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: #172554;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
 
-/* Fact cards */
+/* =========================================================
+   FACT CARDS
+   ========================================================= */
+
 .fact-card {
-    background: white;
+
+    background: #ffffff;
+
+    padding: 19px;
+
     border-radius: 18px;
-    padding: 18px;
-    border-left: 5px solid #2563eb;
-    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
-    margin-bottom: 12px;
+
+    border: 1px solid #e6e8ec;
+
+    box-shadow:
+        0 6px 18px rgba(60,70,80,0.05);
+
+    min-height: 120px;
 }
 
 .fact-title {
     font-weight: 700;
-    color: #172554;
-    font-size: 15px;
+    color: #566174;
+
+    margin-top: 7px;
 }
 
 .fact-value {
-    color: #475569;
+    color: #7a8391;
+
+    font-size: 14px;
+
     margin-top: 5px;
 }
 
-/* Timeline */
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
 .timeline-card {
-    background: white;
-    padding: 18px 22px;
-    margin: 12px 0;
-    border-radius: 16px;
-    border-left: 5px solid #7c3aed;
-    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+
+    background: #ffffff;
+
+    padding: 20px 23px;
+
+    margin: 13px 0;
+
+    border-radius: 18px;
+
+    border-left: 5px solid #a99bc7;
+
+    box-shadow:
+        0 6px 18px rgba(70,70,80,0.05);
 }
 
 .timeline-time {
     font-weight: 800;
-    color: #7c3aed;
+
+    color: #8174a5;
+
+    font-size: 14px;
 }
 
-/* Missing info */
+.timeline-description {
+    color: #697386;
+
+    margin-top: 7px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   WARNING
+   ========================================================= */
+
 .warning-card {
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
+
+    background: #fffaf1;
+
+    border: 1px solid #f1dfb8;
+
     border-radius: 16px;
-    padding: 18px;
-    margin: 10px 0;
-    color: #9a3412;
+
+    padding: 17px;
+
+    margin: 9px 0;
+
+    color: #866d3d;
 }
 
-/* Privacy card */
+
+/* =========================================================
+   PRIVACY
+   ========================================================= */
+
 .privacy-card {
-    background: linear-gradient(135deg, #ecfdf5, #eff6ff);
-    border: 1px solid #bfdbfe;
-    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7f2,
+            #f1eef8
+        );
+
+    border: 1px solid #d8e4df;
+
+    padding: 27px;
+
     border-radius: 22px;
+
     margin-top: 30px;
 }
 
-/* Footer */
+.privacy-title {
+    color: #53655d;
+
+    font-size: 22px;
+
+    font-weight: 750;
+}
+
+.privacy-text {
+    color: #68766f;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+section[data-testid="stSidebar"] {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f1f5f3,
+            #f5f2f7
+        );
+
+    border-right: 1px solid #e1e5e3;
+}
+
+.sidebar-title {
+    color: #4d5868;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+.sidebar-text {
+    color: #737d89;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .footer {
+
     text-align: center;
-    color: #64748b;
-    padding: 35px 0 15px;
+
+    color: #8a929e;
+
+    padding: 40px 0 20px;
+
     font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.stButton > button {
+
+    border-radius: 12px;
+
+    border: 1px solid #cfd8d3;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbece4,
+            #e6e0f2
+        );
+
+    color: #4d5965;
+
+    font-weight: 700;
+
+    padding: 11px 20px;
+
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+
+    border-color: #b7c8c0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d3e6dd,
+            #ddd5eb
+        );
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TEXT AREA
+   ========================================================= */
+
+textarea {
+
+    border-radius: 16px !important;
+
+    border: 1px solid #dfe3e7 !important;
+
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+hr {
+    border-color: #e6e8eb;
 }
 
 </style>
@@ -174,16 +439,26 @@ footer {
 
 with st.sidebar:
 
-    st.markdown("## 🛡️ WitnessAI")
+    st.markdown(
+        '<div class="sidebar-title">🛡️ WitnessAI</div>',
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         """
-        **Privacy-Preserving AI Digital Witness**
+        <div class="sidebar-text">
 
-        Capture facts.  
-        Reconstruct events.  
+        <b>Privacy-Preserving AI Digital Witness</b>
+
+        <br><br>
+
+        Capture facts.<br>
+        Reconstruct events.<br>
         Preserve privacy.
-        """
+
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
     st.divider()
@@ -191,18 +466,23 @@ with st.sidebar:
     st.markdown("### 🔐 Privacy First")
 
     st.info(
-        "WitnessAI is designed to minimize unnecessary exposure "
-        "of sensitive incident information."
+        "WitnessAI is designed to minimize unnecessary "
+        "exposure of sensitive incident information."
     )
 
     st.markdown("### ✨ Core Features")
 
     st.markdown("""
-    📝 Incident Capture  
-    🧠 Fact Extraction  
-    ⏱️ Event Timeline  
-    ⚠️ Missing Information  
-    ✅ User Verification  
+    📝 Incident Capture
+
+    🧠 Fact Extraction
+
+    ⏱️ Event Timeline
+
+    ⚠️ Missing Information
+
+    ✅ User Verification
+
     🔒 Privacy-Aware Design
     """)
 
@@ -220,13 +500,15 @@ st.markdown("""
 
 <h1>🛡️ WitnessAI</h1>
 
-<p>
+<div class="hero-subtitle">
 Privacy-Preserving AI Digital Witness
-</p>
+</div>
 
-<p style="margin-top:12px;">
-Capture facts • Reconstruct events • Preserve privacy
-</p>
+<div class="hero-tagline">
+Capture facts&nbsp;&nbsp;•&nbsp;&nbsp;
+Reconstruct events&nbsp;&nbsp;•&nbsp;&nbsp;
+Preserve privacy
+</div>
 
 </div>
 """, unsafe_allow_html=True)
@@ -237,33 +519,33 @@ Capture facts • Reconstruct events • Preserve privacy
 # =========================================================
 
 st.markdown("""
-<div style="
-background:white;
-padding:25px;
-border-radius:20px;
-box-shadow:0 6px 20px rgba(15,23,42,0.06);
-margin-bottom:25px;
-">
+<div class="intro-card">
 
-<h3 style="color:#172554;">📌 What is WitnessAI?</h3>
+<div class="intro-title">
+📌 What is WitnessAI?
+</div>
 
-<p style="color:#475569;font-size:16px;">
+<br>
+
+<div class="intro-text">
+
 WitnessAI helps users document important incidents by transforming
 their description into structured factual information, an event
 timeline, and a list of missing details.
-</p>
 
-<p style="color:#64748b;">
+<br><br>
+
 The system is designed to assist documentation and does not replace
 emergency services, legal advice, or professional investigation.
-</p>
+
+</div>
 
 </div>
 """, unsafe_allow_html=True)
 
 
 # =========================================================
-# FEATURE CARDS
+# FEATURES
 # =========================================================
 
 st.markdown(
@@ -271,51 +553,58 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-col1, col2, col3, col4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 
-with col1:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">📝</div>
-        <div class="feature-title">Capture</div>
-        <div class="feature-text">
-        Describe what happened in your own words.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+features = [
+    (
+        "📝",
+        "Capture",
+        "Describe what happened using your own words."
+    ),
+    (
+        "🧠",
+        "Understand",
+        "Extract important factual information."
+    ),
+    (
+        "⏱️",
+        "Reconstruct",
+        "Organize events into a clear timeline."
+    ),
+    (
+        "🔒",
+        "Protect",
+        "Follow a privacy-first documentation approach."
+    )
+]
 
-with col2:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">🧠</div>
-        <div class="feature-title">Understand</div>
-        <div class="feature-text">
-        Extract important facts from the description.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+for column, feature in zip(
+    [c1, c2, c3, c4],
+    features
+):
 
-with col3:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">⏱️</div>
-        <div class="feature-title">Reconstruct</div>
-        <div class="feature-text">
-        Organize the incident into a timeline.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    icon, title, description = feature
 
-with col4:
-    st.markdown("""
-    <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <div class="feature-title">Protect</div>
-        <div class="feature-text">
-        Keep the design privacy-focused.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    with column:
+
+        st.markdown(
+            f"""
+            <div class="feature-card">
+
+            <div class="feature-icon">{icon}</div>
+
+            <div class="feature-title">
+            {title}
+            </div>
+
+            <div class="feature-text">
+            {description}
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 # =========================================================
@@ -351,7 +640,7 @@ incident_date = st.date_input(
 
 
 # =========================================================
-# ANALYZE BUTTON
+# ANALYZE
 # =========================================================
 
 if st.button(
@@ -363,7 +652,7 @@ if st.button(
     if not incident_text.strip():
 
         st.warning(
-            "⚠️ Please describe the incident before analyzing it."
+            "Please describe the incident before analyzing it."
         )
 
     else:
@@ -375,7 +664,6 @@ if st.button(
             missing = find_missing_information(facts)
 
             timeline = build_timeline(incident_text)
-
 
         st.success("✅ Incident analysis completed.")
 
@@ -406,17 +694,28 @@ if st.button(
 
             with column:
 
-                if values:
-                    value = ", ".join(values)
-                else:
-                    value = "Not provided"
+                value = (
+                    ", ".join(values)
+                    if values
+                    else "Not provided"
+                )
 
                 st.markdown(
                     f"""
                     <div class="fact-card">
-                        <div style="font-size:26px;">{icon}</div>
-                        <div class="fact-title">{title}</div>
-                        <div class="fact-value">{value}</div>
+
+                    <div style="font-size:27px;">
+                    {icon}
+                    </div>
+
+                    <div class="fact-title">
+                    {title}
+                    </div>
+
+                    <div class="fact-value">
+                    {value}
+                    </div>
+
                     </div>
                     """,
                     unsafe_allow_html=True
@@ -424,7 +723,7 @@ if st.button(
 
 
         # =================================================
-        # INCIDENT DATE
+        # DATE
         # =================================================
 
         st.markdown(
@@ -433,7 +732,8 @@ if st.button(
         )
 
         st.info(
-            f"Recorded incident date: **{incident_date.strftime('%d %B %Y')}**"
+            f"Recorded incident date: "
+            f"**{incident_date.strftime('%d %B %Y')}**"
         )
 
 
@@ -446,34 +746,27 @@ if st.button(
             unsafe_allow_html=True
         )
 
-        if timeline:
+        for index, event in enumerate(
+            timeline,
+            start=1
+        ):
 
-            for index, event in enumerate(timeline, start=1):
+            st.markdown(
+                f"""
+                <div class="timeline-card">
 
-                st.markdown(
-                    f"""
-                    <div class="timeline-card">
+                <div class="timeline-time">
+                EVENT {index} • {event["time"]}
+                </div>
 
-                    <div class="timeline-time">
-                    EVENT {index} • {event["time"]}
-                    </div>
+                <div class="timeline-description">
+                {event["description"]}
+                </div>
 
-                    <div style="
-                    margin-top:7px;
-                    color:#475569;
-                    font-size:15px;
-                    ">
-                    {event["description"]}
-                    </div>
-
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                )
-
-        else:
-
-            st.info("No timeline events were detected.")
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
 
 
         # =================================================
@@ -481,7 +774,9 @@ if st.button(
         # =================================================
 
         st.markdown(
-            '<div class="section-title">⚠️ Information That May Be Missing</div>',
+            '<div class="section-title">'
+            '⚠️ Information That May Be Missing'
+            '</div>',
             unsafe_allow_html=True
         )
 
@@ -501,12 +796,12 @@ if st.button(
         else:
 
             st.success(
-                "The basic information categories were detected."
+                "All basic information categories were detected."
             )
 
 
         # =================================================
-        # USER VERIFICATION
+        # VERIFICATION
         # =================================================
 
         st.markdown(
@@ -526,19 +821,25 @@ if st.button(
         st.markdown("""
         <div class="privacy-card">
 
-        <h3>🔐 Privacy by Design</h3>
+        <div class="privacy-title">
+        🔐 Privacy by Design
+        </div>
 
-        <p style="color:#475569;">
+        <br>
+
+        <div class="privacy-text">
+
         WitnessAI is designed around a privacy-first principle:
         sensitive incident information should not be unnecessarily
         exposed or shared.
-        </p>
 
-        <p style="color:#475569;">
+        <br><br>
+
         The current prototype demonstrates the documentation and
         verification workflow. Future versions will integrate
         dedicated on-device AI models for stronger local processing.
-        </p>
+
+        </div>
 
         </div>
         """, unsafe_allow_html=True)
@@ -553,34 +854,34 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-step1, step2, step3, step4 = st.columns(4)
+s1, s2, s3, s4 = st.columns(4)
 
-with step1:
+with s1:
     st.markdown("""
     **01 — 📝 Capture**
 
     User describes the incident.
     """)
 
-with step2:
+with s2:
     st.markdown("""
     **02 — 🧠 Analyze**
 
     Important facts are extracted.
     """)
 
-with step3:
+with s3:
     st.markdown("""
     **03 — ⏱️ Reconstruct**
 
     Events are organized into a timeline.
     """)
 
-with step4:
+with s4:
     st.markdown("""
     **04 — ✅ Verify**
 
-    User reviews and verifies the information.
+    User reviews the generated record.
     """)
 
 
@@ -591,15 +892,19 @@ with step4:
 st.markdown("""
 <div class="footer">
 
-🛡️ <b>WitnessAI</b> — Privacy-Preserving AI Digital Witness
+🛡️ <b>WitnessAI</b>
 
 <br>
+
+Privacy-Preserving AI Digital Witness
+
+<br><br>
 
 Capture Facts • Reconstruct Events • Preserve Privacy
 
 <br><br>
 
-Prototype developed for the Snapdragon AI Lab Build & Present Challenge
+Prototype • 2026
 
 </div>
 """, unsafe_allow_html=True)
