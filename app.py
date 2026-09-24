@@ -6,7 +6,7 @@ from timeline import build_timeline
 
 
 # =========================================================
-# PAGE CONFIG
+# PAGE
 # =========================================================
 
 st.set_page_config(
@@ -18,7 +18,7 @@ st.set_page_config(
 
 
 # =========================================================
-# SOFT PASTEL DESIGN
+# COLORFUL UI
 # =========================================================
 
 st.markdown("""
@@ -31,16 +31,9 @@ html, body, [class*="css"] {
 }
 
 .stApp {
-    background:
-        linear-gradient(
-            135deg,
-            #f7faf8 0%,
-            #f5f7fb 45%,
-            #faf7fb 100%
-        );
+    background: #faf9fc;
 }
 
-/* Hide Streamlit branding */
 #MainMenu {
     visibility: hidden;
 }
@@ -50,383 +43,385 @@ footer {
 }
 
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* ================= HERO ================= */
 
 .hero {
-    padding: 38px 45px;
-    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        #ddd4f7,
+        #cfc3f2,
+        #e5dff8
+    );
 
-    background:
-        linear-gradient(
-            120deg,
-            #dfeee7,
-            #e7e3f5,
-            #dfeef4
-        );
+    padding: 42px 45px;
+    border-radius: 30px;
 
-    border: 1px solid #d9e3df;
+    border: 1px solid #d4c9ef;
 
-    box-shadow:
-        0 15px 35px rgba(60, 70, 80, 0.08);
+    box-shadow: 0 12px 30px rgba(105, 85, 150, 0.12);
 
     margin-bottom: 28px;
 }
 
 .hero h1 {
-    font-size: 46px;
+    color: #51406f;
+    font-size: 48px;
     font-weight: 800;
-    color: #354052;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .hero-subtitle {
-    font-size: 19px;
-    color: #667085;
+    color: #66577d;
+    font-size: 20px;
 }
 
 .hero-tagline {
+    color: #74678a;
     font-size: 15px;
-    color: #6f7185;
     margin-top: 14px;
 }
 
 
-/* =========================================================
-   INTRO CARD
-   ========================================================= */
-
-.intro-card {
-    background: #ffffff;
-
-    padding: 28px;
-
-    border-radius: 22px;
-
-    border: 1px solid #e7e9ee;
-
-    box-shadow:
-        0 8px 25px rgba(60, 70, 80, 0.06);
-
-    margin-bottom: 30px;
-}
-
-.intro-title {
-    color: #465266;
-    font-size: 27px;
-    font-weight: 750;
-}
-
-.intro-text {
-    color: #687386;
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   SECTION TITLE
-   ========================================================= */
+/* ================= SECTION TITLE ================= */
 
 .section-title {
-    font-size: 27px;
+    font-size: 28px;
     font-weight: 800;
-    color: #465266;
+    color: #4c5263;
 
     margin-top: 32px;
     margin-bottom: 18px;
 }
 
 
-/* =========================================================
-   FEATURE CARDS
-   ========================================================= */
+/* ================= INTRO ================= */
+
+.intro-card {
+    background: linear-gradient(
+        135deg,
+        #ffeaf2,
+        #f9e8f1
+    );
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    border: 1px solid #f0cedc;
+
+    box-shadow: 0 8px 22px rgba(150, 90, 110, 0.07);
+}
+
+.intro-title {
+    color: #8a526b;
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.intro-text {
+    color: #735f69;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ================= FEATURE CARDS ================= */
 
 .feature-card {
+    padding: 24px;
 
-    background: rgba(255,255,255,0.92);
+    border-radius: 22px;
 
-    padding: 22px;
+    min-height: 165px;
 
-    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.05);
 
-    border: 1px solid #e5e8ec;
+    box-shadow: 0 8px 20px rgba(60,60,70,0.07);
 
-    box-shadow:
-        0 7px 22px rgba(70,80,90,0.06);
-
-    min-height: 150px;
-
-    transition: transform 0.2s ease;
+    transition: transform .2s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .feature-icon {
-    font-size: 30px;
+    font-size: 34px;
 }
 
 .feature-title {
-    font-size: 17px;
-    font-weight: 750;
-
-    color: #4d5868;
-
-    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 9px;
 }
 
 .feature-text {
     font-size: 13px;
-
-    color: #7a8391;
-
-    margin-top: 7px;
-
+    margin-top: 8px;
     line-height: 1.5;
 }
 
 
-/* =========================================================
-   FACT CARDS
-   ========================================================= */
+/* INDIVIDUAL COLORS */
+
+.capture-card {
+    background: #e8f4ff;
+    color: #426987;
+}
+
+.ai-card {
+    background: #e9f7ef;
+    color: #4e7661;
+}
+
+.timeline-feature {
+    background: #fff0e6;
+    color: #8a654f;
+}
+
+.privacy-feature {
+    background: #f3edff;
+    color: #66558a;
+}
+
+
+/* ================= INPUT ================= */
+
+.input-card {
+    background: #eaf5ff;
+
+    padding: 25px;
+
+    border-radius: 23px;
+
+    border: 1px solid #cfe5f7;
+
+    margin-top: 10px;
+}
+
+
+/* ================= FACT CARDS ================= */
 
 .fact-card {
+    padding: 20px;
 
-    background: #ffffff;
+    border-radius: 19px;
 
-    padding: 19px;
+    min-height: 135px;
 
-    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(60,60,70,0.06);
 
-    border: 1px solid #e6e8ec;
+    border: 1px solid rgba(0,0,0,0.04);
+}
 
-    box-shadow:
-        0 6px 18px rgba(60,70,80,0.05);
+.fact-time {
+    background: #eee8ff;
+}
 
-    min-height: 120px;
+.fact-location {
+    background: #e7f4ff;
+}
+
+.fact-people {
+    background: #e9f8ef;
+}
+
+.fact-object {
+    background: #fff0e7;
+}
+
+.fact-event {
+    background: #fff8d9;
 }
 
 .fact-title {
-    font-weight: 700;
-    color: #566174;
-
-    margin-top: 7px;
+    font-weight: 800;
+    margin-top: 8px;
 }
 
 .fact-value {
-    color: #7a8391;
-
     font-size: 14px;
-
-    margin-top: 5px;
+    margin-top: 6px;
+    color: #667085;
 }
 
 
-/* =========================================================
-   TIMELINE
-   ========================================================= */
+/* ================= TIMELINE ================= */
 
 .timeline-card {
-
-    background: #ffffff;
+    background: #fff0e5;
 
     padding: 20px 23px;
 
-    margin: 13px 0;
+    margin: 12px 0;
 
     border-radius: 18px;
 
-    border-left: 5px solid #a99bc7;
+    border-left: 5px solid #e5a875;
 
-    box-shadow:
-        0 6px 18px rgba(70,70,80,0.05);
+    box-shadow: 0 6px 18px rgba(120,80,50,0.06);
 }
 
 .timeline-time {
+    color: #9b6841;
     font-weight: 800;
-
-    color: #8174a5;
-
-    font-size: 14px;
 }
 
 .timeline-description {
-    color: #697386;
-
+    color: #6f6259;
     margin-top: 7px;
-
-    line-height: 1.6;
 }
 
 
-/* =========================================================
-   WARNING
-   ========================================================= */
+/* ================= WARNING ================= */
 
 .warning-card {
+    background: #fff7cf;
 
-    background: #fffaf1;
+    border: 1px solid #eadb8b;
 
-    border: 1px solid #f1dfb8;
-
-    border-radius: 16px;
+    color: #806d24;
 
     padding: 17px;
 
     margin: 9px 0;
 
-    color: #866d3d;
+    border-radius: 17px;
 }
 
 
-/* =========================================================
-   PRIVACY
-   ========================================================= */
+/* ================= VERIFICATION ================= */
+
+.verify-card {
+    background: #eee8ff;
+
+    border: 1px solid #d9ccf5;
+
+    padding: 23px;
+
+    border-radius: 21px;
+
+    color: #63537f;
+}
+
+
+/* ================= PRIVACY ================= */
 
 .privacy-card {
+    background: linear-gradient(
+        135deg,
+        #e4f7ed,
+        #e9f8f4
+    );
 
-    background:
-        linear-gradient(
-            135deg,
-            #edf7f2,
-            #f1eef8
-        );
+    border: 1px solid #cce8da;
 
-    border: 1px solid #d8e4df;
+    padding: 28px;
 
-    padding: 27px;
-
-    border-radius: 22px;
+    border-radius: 23px;
 
     margin-top: 30px;
 }
 
 .privacy-title {
-    color: #53655d;
-
-    font-size: 22px;
-
-    font-weight: 750;
+    color: #4b765e;
+    font-size: 23px;
+    font-weight: 800;
 }
 
 .privacy-text {
-    color: #68766f;
-
+    color: #5f7168;
     line-height: 1.7;
 }
 
 
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
+/* ================= HOW IT WORKS ================= */
+
+.step-card {
+    padding: 22px;
+
+    border-radius: 20px;
+
+    min-height: 130px;
+
+    box-shadow: 0 6px 18px rgba(60,60,70,0.06);
+}
+
+.step1 {
+    background: #e7f3ff;
+}
+
+.step2 {
+    background: #e9f7ef;
+}
+
+.step3 {
+    background: #fff0e5;
+}
+
+.step4 {
+    background: #eee8ff;
+}
+
+
+/* ================= SIDEBAR ================= */
 
 section[data-testid="stSidebar"] {
-
-    background:
-        linear-gradient(
-            180deg,
-            #f1f5f3,
-            #f5f2f7
-        );
-
-    border-right: 1px solid #e1e5e3;
+    background: linear-gradient(
+        180deg,
+        #f1edfa,
+        #f8eef4
+    );
 }
 
 .sidebar-title {
-    color: #4d5868;
-
-    font-size: 22px;
-
+    color: #57466f;
+    font-size: 23px;
     font-weight: 800;
 }
 
-.sidebar-text {
-    color: #737d89;
 
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-
-    text-align: center;
-
-    color: #8a929e;
-
-    padding: 40px 0 20px;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   BUTTON
-   ========================================================= */
+/* ================= BUTTON ================= */
 
 .stButton > button {
+    border-radius: 14px;
 
-    border-radius: 12px;
+    background: linear-gradient(
+        135deg,
+        #cbb9ed,
+        #e0b9cf
+    );
 
-    border: 1px solid #cfd8d3;
+    color: #51425f;
 
-    background:
-        linear-gradient(
-            135deg,
-            #dbece4,
-            #e6e0f2
-        );
+    border: none;
 
-    color: #4d5965;
+    font-weight: 800;
 
-    font-weight: 700;
+    padding: 12px;
 
-    padding: 11px 20px;
-
-    transition: all 0.2s ease;
+    box-shadow: 0 6px 15px rgba(120,90,140,0.12);
 }
 
 .stButton > button:hover {
-
-    border-color: #b7c8c0;
-
-    background:
-        linear-gradient(
-            135deg,
-            #d3e6dd,
-            #ddd5eb
-        );
-
-    transform: translateY(-1px);
+    background: linear-gradient(
+        135deg,
+        #bda8e5,
+        #d9a9c3
+    );
 }
 
 
-/* =========================================================
-   TEXT AREA
-   ========================================================= */
+/* ================= FOOTER ================= */
 
-textarea {
+.footer {
+    text-align: center;
 
-    border-radius: 16px !important;
+    color: #8a8492;
 
-    border: 1px solid #dfe3e7 !important;
+    padding: 45px 0 20px;
 
-    background: #ffffff !important;
-}
-
-
-/* =========================================================
-   DIVIDER
-   ========================================================= */
-
-hr {
-    border-color: #e6e8eb;
+    font-size: 13px;
 }
 
 </style>
@@ -444,33 +439,26 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-    st.markdown(
-        """
-        <div class="sidebar-text">
+    st.markdown("""
+    **Privacy-Preserving AI Digital Witness**
 
-        <b>Privacy-Preserving AI Digital Witness</b>
+    Capture facts.
 
-        <br><br>
+    Reconstruct events.
 
-        Capture facts.<br>
-        Reconstruct events.<br>
-        Preserve privacy.
-
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    Preserve privacy.
+    """)
 
     st.divider()
 
     st.markdown("### 🔐 Privacy First")
 
     st.info(
-        "WitnessAI is designed to minimize unnecessary "
-        "exposure of sensitive incident information."
+        "Designed to minimize unnecessary exposure "
+        "of sensitive incident information."
     )
 
-    st.markdown("### ✨ Core Features")
+    st.markdown("### ✨ Features")
 
     st.markdown("""
     📝 Incident Capture
@@ -481,14 +469,14 @@ with st.sidebar:
 
     ⚠️ Missing Information
 
-    ✅ User Verification
+    ✅ Verification
 
-    🔒 Privacy-Aware Design
+    🔒 Privacy
     """)
 
     st.divider()
 
-    st.caption("WitnessAI • Prototype 2026")
+    st.caption("WitnessAI • 2026")
 
 
 # =========================================================
@@ -505,8 +493,8 @@ Privacy-Preserving AI Digital Witness
 </div>
 
 <div class="hero-tagline">
-Capture facts&nbsp;&nbsp;•&nbsp;&nbsp;
-Reconstruct events&nbsp;&nbsp;•&nbsp;&nbsp;
+Capture facts &nbsp;•&nbsp;
+Reconstruct events &nbsp;•&nbsp;
 Preserve privacy
 </div>
 
@@ -515,7 +503,7 @@ Preserve privacy
 
 
 # =========================================================
-# INTRODUCTION
+# INTRO
 # =========================================================
 
 st.markdown("""
@@ -535,8 +523,8 @@ timeline, and a list of missing details.
 
 <br><br>
 
-The system is designed to assist documentation and does not replace
-emergency services, legal advice, or professional investigation.
+The system assists documentation and does not replace emergency
+services, legal advice, or professional investigation.
 
 </div>
 
@@ -555,50 +543,59 @@ st.markdown(
 
 c1, c2, c3, c4 = st.columns(4)
 
-features = [
+feature_data = [
     (
+        "capture-card",
         "📝",
         "Capture",
-        "Describe what happened using your own words."
+        "Describe the incident in your own words."
     ),
+
     (
+        "ai-card",
         "🧠",
         "Understand",
         "Extract important factual information."
     ),
+
     (
+        "timeline-feature",
         "⏱️",
         "Reconstruct",
-        "Organize events into a clear timeline."
+        "Organize events into a timeline."
     ),
+
     (
+        "privacy-feature",
         "🔒",
         "Protect",
         "Follow a privacy-first documentation approach."
     )
 ]
 
-for column, feature in zip(
+for column, item in zip(
     [c1, c2, c3, c4],
-    features
+    feature_data
 ):
 
-    icon, title, description = feature
+    css_class, icon, title, text = item
 
     with column:
 
         st.markdown(
             f"""
-            <div class="feature-card">
+            <div class="feature-card {css_class}">
 
-            <div class="feature-icon">{icon}</div>
+            <div class="feature-icon">
+            {icon}
+            </div>
 
             <div class="feature-title">
             {title}
             </div>
 
             <div class="feature-text">
-            {description}
+            {text}
             </div>
 
             </div>
@@ -616,9 +613,17 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown(
-    "Describe what happened using as much factual detail as you remember."
-)
+st.markdown("""
+<div class="input-card">
+
+<b>Tell WitnessAI what happened.</b>
+
+<br><br>
+
+Describe the incident using the factual details you remember.
+
+</div>
+""", unsafe_allow_html=True)
 
 incident_text = st.text_area(
     "Incident description",
@@ -652,7 +657,7 @@ if st.button(
     if not incident_text.strip():
 
         st.warning(
-            "Please describe the incident before analyzing it."
+            "⚠️ Please describe the incident first."
         )
 
     else:
@@ -665,7 +670,7 @@ if st.button(
 
             timeline = build_timeline(incident_text)
 
-        st.success("✅ Incident analysis completed.")
+        st.success("✅ Incident analysis completed!")
 
 
         # =================================================
@@ -680,17 +685,19 @@ if st.button(
         fact_columns = st.columns(5)
 
         categories = [
-            ("🕐", "Time", facts["time"]),
-            ("📍", "Location", facts["location"]),
-            ("👥", "People", facts["people"]),
-            ("🚗", "Objects", facts["objects"]),
-            ("⚡", "Events", facts["events"])
+            ("fact-time", "🕐", "Time", facts["time"]),
+            ("fact-location", "📍", "Location", facts["location"]),
+            ("fact-people", "👥", "People", facts["people"]),
+            ("fact-object", "🚗", "Objects", facts["objects"]),
+            ("fact-event", "⚡", "Events", facts["events"])
         ]
 
-        for column, (icon, title, values) in zip(
+        for column, item in zip(
             fact_columns,
             categories
         ):
+
+            css_class, icon, title, values = item
 
             with column:
 
@@ -702,9 +709,9 @@ if st.button(
 
                 st.markdown(
                     f"""
-                    <div class="fact-card">
+                    <div class="fact-card {css_class}">
 
-                    <div style="font-size:27px;">
+                    <div style="font-size:28px;">
                     {icon}
                     </div>
 
@@ -732,7 +739,7 @@ if st.button(
         )
 
         st.info(
-            f"Recorded incident date: "
+            f"Recorded date: "
             f"**{incident_date.strftime('%d %B %Y')}**"
         )
 
@@ -770,7 +777,7 @@ if st.button(
 
 
         # =================================================
-        # MISSING INFORMATION
+        # MISSING
         # =================================================
 
         st.markdown(
@@ -809,8 +816,21 @@ if st.button(
             unsafe_allow_html=True
         )
 
+        st.markdown("""
+        <div class="verify-card">
+
+        <b>Before using this record:</b>
+
+        <br><br>
+
+        Review the extracted information and make sure
+        the details accurately represent what you remember.
+
+        </div>
+        """, unsafe_allow_html=True)
+
         st.checkbox(
-            "I have reviewed the extracted information and understand that I should verify all details before using this record."
+            "I have reviewed the information and will verify all details."
         )
 
 
@@ -829,14 +849,13 @@ if st.button(
 
         <div class="privacy-text">
 
-        WitnessAI is designed around a privacy-first principle:
-        sensitive incident information should not be unnecessarily
-        exposed or shared.
+        WitnessAI follows a privacy-first approach for
+        sensitive incident documentation.
 
         <br><br>
 
-        The current prototype demonstrates the documentation and
-        verification workflow. Future versions will integrate
+        The current prototype demonstrates the documentation
+        and verification workflow. Future versions will integrate
         dedicated on-device AI models for stronger local processing.
 
         </div>
@@ -856,33 +875,53 @@ st.markdown(
 
 s1, s2, s3, s4 = st.columns(4)
 
-with s1:
-    st.markdown("""
-    **01 — 📝 Capture**
+steps = [
+    ("step-card step1", "01", "📝 Capture",
+     "User describes the incident."),
 
-    User describes the incident.
-    """)
+    ("step-card step2", "02", "🧠 Analyze",
+     "Important facts are extracted."),
 
-with s2:
-    st.markdown("""
-    **02 — 🧠 Analyze**
+    ("step-card step3", "03", "⏱️ Reconstruct",
+     "Events become a timeline."),
 
-    Important facts are extracted.
-    """)
+    ("step-card step4", "04", "✅ Verify",
+     "User reviews the record.")
+]
 
-with s3:
-    st.markdown("""
-    **03 — ⏱️ Reconstruct**
+for column, step in zip(
+    [s1, s2, s3, s4],
+    steps
+):
 
-    Events are organized into a timeline.
-    """)
+    css, number, title, text = step
 
-with s4:
-    st.markdown("""
-    **04 — ✅ Verify**
+    with column:
 
-    User reviews the generated record.
-    """)
+        st.markdown(
+            f"""
+            <div class="{css}">
+
+            <div style="
+                font-size:14px;
+                font-weight:800;
+                opacity:0.65;
+            ">
+            STEP {number}
+            </div>
+
+            <h4>
+            {title}
+            </h4>
+
+            <div>
+            {text}
+            </div>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
 
 # =========================================================
